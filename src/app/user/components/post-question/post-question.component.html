@@ -1,0 +1,55 @@
+<mat-spinner [color]="'primary'" [diameter]="60" [strokeWidth]="6" *ngIf="isSubmitting"></mat-spinner>
+
+<div class="parent" *ngIf="!isSubmitting">
+    <div class="child">
+        <h2 class="question-caption">Post Question</h2>
+
+        <form [formGroup]="validateForm">
+            <div class="form-input">
+                <mat-form-field appearance="fill">
+                    <mat-label>Title</mat-label>
+                    <input matInput placeholder="Title" formControlName="title" />
+                    <mat-error
+                        *ngIf="validateForm.get('title')!.invalid && (validateForm.get('title')!.dirty || validateForm.get('title')!.touched)">
+                        Title is required!
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-input">
+                <mat-form-field appearance="fill">
+                    <mat-label>Body</mat-label>
+                    <textarea matInput rows="6" placeholder="Body" formControlName="body"></textarea>
+                    <mat-error
+                        *ngIf="validateForm.get('body')!.invalid && (validateForm.get('body')!.dirty || validateForm.get('body')!.touched)">
+                        Body is required!
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-input">
+                <mat-form-field appearance="fill">
+                    <mat-label>Your Tags</mat-label>
+
+                    <mat-chip-grid #chipGrid aria-label="Enter tags" formControlName="tags">
+                        <mat-chip-row *ngFor="let tag of tags" (removed)="remove(tag)" [editable]="true"
+                            (edited)="edit(tag, $event)" [aria-description]="'press enter to edit ' + tag.name">
+                            {{tag.name}}
+                            <button matChipRemove [attr.aria-label]="'remove ' + tag.name">
+                                <mat-icon>cancel</mat-icon>
+                            </button>
+                        </mat-chip-row>
+                        <input placeholder="New tag..." [matChipInputFor]="chipGrid"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                            (matChipInputTokenEnd)="add($event)" />
+                    </mat-chip-grid>
+                </mat-form-field>
+
+            </div>
+
+            <button (click)="postQuestion()" mat-raised-button color="primary" [disabled]="validateForm.invalid"
+                class="login-form-button login-form-margin" type="submit">Post
+                Question</button>
+        </form>
+    </div>
+</div>
