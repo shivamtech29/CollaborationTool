@@ -1,0 +1,21 @@
+<ng-container *ngIf="!isUserLoggedIn; else loggedInToolbar">
+  <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">stack exchange</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+    <button mat-button routerLink="/signup" routerLinkActive="active">Signup</button>
+  </mat-toolbar>
+</ng-container>
+
+<ng-template #loggedInToolbar>
+  <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">stack exchange</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/user/dashboard" routerLinkActive="active">Dashboard</button>
+    <button mat-button routerLink="/user/question" routerLinkActive="active">Post Question</button>
+    <button mat-button routerLink="/user/my_questions" routerLinkActive="active">My questions</button>
+    <button mat-button (click)="logout()" routerLinkActive="active">Logout</button>
+  </mat-toolbar>
+</ng-template>
+
+<router-outlet></router-outlet>
