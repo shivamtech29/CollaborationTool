@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth-components/login/login.component';
 import { SignupComponent } from './auth-components/signup/signup.component';
 import { NoAuthGuard } from './auth-guards/noAuth-guard/no-auth.guard';
+import { AiHelpComponent } from './user/components/ai-help/ai-help.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, canActivate: [NoAuthGuard] },

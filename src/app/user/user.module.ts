@@ -15,12 +15,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ViewQuestionComponent } from './components/view-question/view-question.component';
 import { GetQuestionsByUseridComponent } from './components/get-questions-by-userid/get-questions-by-userid.component';
+import { AiHelpComponent } from './components/ai-help/ai-help.component';
 @NgModule({
   declarations: [
     DashboardComponent,
     PostQuestionComponent,
     ViewQuestionComponent,
-    GetQuestionsByUseridComponent
+    GetQuestionsByUseridComponent,
+    AiHelpComponent
   ],
   imports: [
     CommonModule,

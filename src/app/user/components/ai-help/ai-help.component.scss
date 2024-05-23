@@ -1,0 +1,45 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.chat-history {
+    overflow-y: auto;
+}
+
+.message {
+    margin: 1rem 0; /* Adjust this value to control the spacing between messages */
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+.user {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+}
+
+.ai {
+    align-self: flex-start;
+    background-color: #ffffff;
+}
+
+.chat-input {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.chat-input form {
+    display: flex;
+    width: 100%;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    margin-right: 1rem;
+}
