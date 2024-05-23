@@ -2,6 +2,9 @@
 
     <div>
         <div class="container">
+            <div class="search-bar-wrapper mt-3">
+                <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control search-bar" placeholder="Search Questions..." aria-label="search"/>
+            </div>
             <h1>All Questions</h1>
             <ng-container *ngIf="questions.length === 0; else questionList">
                 <mat-card class="empty-message">
@@ -13,7 +16,7 @@
             </ng-container>
 
             <ng-template #questionList>
-                <div class="child" *ngFor="let question of questions">
+                <div class="child" *ngFor="let question of questions|filter:searchtext">
                     <h2 class="question-title">
                         <a routerLink="/user/question/{{question.id}}">{{question.title}}</a>
                     </h2>

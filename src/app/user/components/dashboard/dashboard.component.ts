@@ -11,6 +11,7 @@ export class DashboardComponent {
   questions: any[] = [];
   pageNumber: number = 0;
   total!: number;
+  searchtext:any;
   constructor(private questionService: QuestionService) { }
 
   ngOnInit() {
