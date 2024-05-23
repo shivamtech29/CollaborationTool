@@ -1,5 +1,6 @@
 <ng-container *ngIf="!isUserLoggedIn; else loggedInToolbar">
   <mat-toolbar color="primary" class="navbar">
+    <img src="https://cdn.sstatic.net/Sites/stackoverflow/company/Img/logos/se/se-logo.svg?v=d29f0785ebb7" alt="Stackexchange logo" class="logo">
     <span class="navbar-brand">stack exchange</span>
     <span class="spacer"></span>
     <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
@@ -9,9 +10,11 @@
 
 <ng-template #loggedInToolbar>
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">stack exchange</span>
+    <img src="https://cdn.sstatic.net/Sites/stackoverflow/company/Img/logos/se/se-logo.svg?v=d29f0785ebb7" alt="Stackexchange logo" class="logo">
+    <!-- <span class="navbar-brand">stack exchange</span> -->
     <span class="spacer"></span>
     <button mat-button routerLink="/user/dashboard" routerLinkActive="active">Dashboard</button>
+    <button mat-button routerLink="/user/ai-help" routerLinkActive="active">AI Help</button>
     <button mat-button routerLink="/user/question" routerLinkActive="active">Post Question</button>
     <button mat-button routerLink="/user/my_questions" routerLinkActive="active">My questions</button>
     <button mat-button (click)="logout()" routerLinkActive="active">Logout</button>

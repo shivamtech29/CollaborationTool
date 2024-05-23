@@ -5,12 +5,14 @@ import { UserGuard } from '../auth-guards/user-gard/user.guard';
 import { PostQuestionComponent } from './components/post-question/post-question.component';
 import { ViewQuestionComponent } from './components/view-question/view-question.component';
 import { GetQuestionsByUseridComponent } from './components/get-questions-by-userid/get-questions-by-userid.component';
+import { AiHelpComponent } from './components/ai-help/ai-help.component';
 
 const routes: Routes = [
   { path: "dashboard", component: DashboardComponent, canActivate: [UserGuard] },
   { path: "question", component: PostQuestionComponent, canActivate: [UserGuard] },
   { path: "question/:questionId", component: ViewQuestionComponent, canActivate: [UserGuard] },
-  { path: "my_questions", component: GetQuestionsByUseridComponent, canActivate: [UserGuard] }
+  { path: "my_questions", component: GetQuestionsByUseridComponent, canActivate: [UserGuard] },
+  { path: 'ai-help', component: AiHelpComponent }
 ];
 
 @NgModule({
