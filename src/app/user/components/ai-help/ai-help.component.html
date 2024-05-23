@@ -1,0 +1,17 @@
+<div class="chat-container">
+    <div class="chat-history" *ngFor="let message of messages; let i = index">
+        <div class="message user" *ngIf="message.user">
+            <p>{{ message.text }}</p>
+        </div>
+        <div class="message ai" *ngIf="!message.user && messages[i-1]?.user">
+            <p>{{ message.text }}</p>
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <form (ngSubmit)="sendMessage()">
+            <input type="text" [(ngModel)]="newMessage" name="newMessage" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>

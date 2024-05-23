@@ -25,3 +25,18 @@ button.active {
 .custom-toolbar {
   background-color: #ff3700; /* Replace with your desired color code or name */
 }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  color: black;
+  text-align: center;
+}
+
+.logo {
+  width: 200px; /* Adjust as needed */
+  height: auto;
+}

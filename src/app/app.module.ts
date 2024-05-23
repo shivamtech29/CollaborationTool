@@ -33,7 +33,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
