@@ -1,17 +1,42 @@
-<div class="chat-container">
-    <div class="chat-history" *ngFor="let message of messages; let i = index">
-        <div class="message user" *ngIf="message.user">
-            <p>{{ message.text }}</p>
-        </div>
-        <div class="message ai" *ngIf="!message.user && messages[i-1]?.user">
-            <p>{{ message.text }}</p>
-        </div>
+<!-- <div class="chat-container">
+    <div class="chat-history">
+      <div class="message user" *ngFor="let message of messages">
+        <p>{{ message.text }}</p>
+      </div>
     </div>
-
+  
     <div class="chat-input">
-        <form (ngSubmit)="sendMessage()">
-            <input type="text" [(ngModel)]="newMessage" name="newMessage" required>
-            <button type="submit">Send</button>
-        </form>
+      <form (submit)="sendMessage()">
+        <div class="form-input">
+          <mat-form-field appearance="fill">
+            <mat-label>Query</mat-label>
+            <input matInput placeholder="Query" [(ngModel)]="query" name="query" />
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" type="submit">Post Question</button>
+      </form>
     </div>
-</div>
+  </div>
+   -->
+
+   <div class="chat-container">
+    <div class="chat-history">
+      <div *ngFor="let message of messages" [ngClass]="{'message user': message.user, 'message ai': !message.user}">
+        <p>{{ message.text }}</p>
+      </div>
+    </div>
+    
+    <div class="chat-input">
+      <form (submit)="sendMessage()" class="form-input">
+        <mat-form-field appearance="fill" class="input-field">
+          <!-- <mat-label>Query</mat-label> -->
+          <input matInput placeholder="Ask XchangeAI" [(ngModel)]="query" name="query" />
+        </mat-form-field>
+        <!-- <button mat-raised-button color="primary" type="submit" class="send-button">Send</button> -->
+        <button mat-icon-button type="submit" aria-label="Send">
+            <mat-icon>send</mat-icon>
+        </button>
+    </form>
+    </div>
+  </div>
+  
