@@ -1,0 +1,11 @@
+{
+  "routes": [
+    "/login",
+    "/signup",
+    "/user",
+    "/user/ai-help",
+    "/user/dashboard",
+    "/user/my_questions",
+    "/user/question"
+  ]
+}
