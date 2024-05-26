@@ -1,34 +1,69 @@
 apiVersion: apps/v1 
 kind: Deployment  
 metadata:
-  name: CollaborationToolFrontend
+  name: collaborationtool
 spec:
   selector:
     matchLabels:
-      app: CollaborationTool
-  replicas: 2
+      app: collaborationtool
+  replicas: 1
   template:
     metadata:
       labels:
-        app: CollaborationTool
+        app: collaborationtool
     spec:
       containers:
-      - name: CollaborationTool
-        image: shivamtech29/ng-frontend:1.0 
+      - name: collaborationtool
+        image: shivamtech29/ng-frontend:4.0 
         ports:
-        - containerPort: 4200 
+        - containerPort: 80 
 ---
 
 kind: Service
 apiVersion: v1
 metadata:
-  name: CollaborationTool-service
+  name: collaborationtool-service
 spec:
   selector:
-    app: CollaborationTool
+    app: collaborationtool
   ports:
   - protocol: TCP
     port: 80 
-    targetPort: 4200
-    nodePort: 31000
+    targetPort: 80
+    nodePort: 32000
   type: NodePort
+
+
+
+---
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: istio-frontend
+spec:
+  controller: istio.io/ingress-controller
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: collaborationtool
+spec:
+  ingressClassName: istio-frontend
+  rules:
+    - host: collaborationtool.b7b0cfd.kyma.ondemand.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: collaborationtool-service
+                port:
+                  number: 80
+  tls:
+    - hosts:
+      - collaborationtool.b7b0cfd.kyma.ondemand.com
+      secretName: kyma-gateway-certs
+

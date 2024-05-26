@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 
 // const BASIC_URL = 'http://localhost:5000/api/';
-const BASIC_URL = 'http://44.223.222.137:5000/api/'
+const BASIC_URL = 'https://stackoverflow-spring.b7b0cfd.kyma.ondemand.com/api/'
 
 @Injectable({
   providedIn: 'root'

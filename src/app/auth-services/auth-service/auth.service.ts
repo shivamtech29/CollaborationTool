@@ -5,7 +5,7 @@ import { StorageService } from '../storage-service/storage.service';
 import { tap } from 'rxjs/operators';
 
 // const BASIC_URL = 'http://localhost:5000/';
-const BASIC_URL = 'http://44.223.222.137:5000/'
+const BASIC_URL = 'https://stackoverflow-spring.b7b0cfd.kyma.ondemand.com/'
 export const AUTH_HEADER = 'Authorization';
 @Injectable({
   providedIn: 'root'
