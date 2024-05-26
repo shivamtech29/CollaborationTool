@@ -1,20 +1,20 @@
 apiVersion: apps/v1 
 kind: Deployment  
 metadata:
-  name: angular-deployment
+  name: CollaborationToolFrontend
 spec:
   selector:
     matchLabels:
-      app: angular
+      app: CollaborationTool
   replicas: 2
   template:
     metadata:
       labels:
-        app: angular
+        app: CollaborationTool
     spec:
       containers:
-      - name: angular
-        image: ng-docker-k8s:1.0 
+      - name: CollaborationTool
+        image: ng-frontend:1.0 
         ports:
         - containerPort: 4200 
 ---
@@ -22,10 +22,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: angular-service
+  name: CollaborationTool-service
 spec:
   selector:
-    app: angular
+    app: CollaborationTool
   ports:
   - protocol: TCP
     port: 80 
