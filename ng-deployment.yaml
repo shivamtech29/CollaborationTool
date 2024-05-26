@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: CollaborationTool
-        image: ng-frontend:1.0 
+        image: shivamtech29/ng-frontend:1.0 
         ports:
         - containerPort: 4200 
 ---
