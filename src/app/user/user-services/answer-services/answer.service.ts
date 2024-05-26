@@ -4,7 +4,8 @@ import { StorageService } from '../../../auth-services/storage-service/storage.s
 import { Observable } from 'rxjs';
 
 
-const BASIC_URL = 'http://localhost:5000/api/';
+// const BASIC_URL = 'http://localhost:5000/api/';
+const BASIC_URL = 'http://44.223.222.137:5000/api/'
 
 @Injectable({
   providedIn: 'root'
