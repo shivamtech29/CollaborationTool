@@ -1,0 +1,39 @@
+<div class="signup-container">
+  <mat-card class="signup-card">
+    <mat-card-content>
+      <h2 class="signup-caption">Signup</h2>
+      <form [formGroup]="signupForm">
+        <div class="form-input">
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter your email" name="email" type="email" required formControlName="email" />
+          </mat-form-field>
+        </div>
+        <div class="form-input">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter your name" name="name" required formControlName="name" />
+          </mat-form-field>
+        </div>
+        <div class="form-input">
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter your password" name="password" type="password" required
+              formControlName="password" autocomplete="new-password" />
+          </mat-form-field>
+        </div>
+        <div class="form-input">
+          <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input matInput placeholder="Confirm your password" name="confirmPassword" type="password" required
+              formControlName="confirmPassword" autocomplete="new-password" />
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" class="signup-button" (click)="signup()"
+          [disabled]="signupForm.invalid">
+          Signup
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
