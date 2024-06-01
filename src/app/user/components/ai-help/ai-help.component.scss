@@ -1,0 +1,155 @@
+// /* Chat Container */
+// .chat-container {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100vh;
+// }
+
+// /* Chat History */
+// .chat-history {
+//   flex: 1;
+//   overflow-y: scroll;
+//   padding: 10px;
+// }
+
+// /* Message Styles */
+// .message {
+//   display: inline-block;
+//   max-width: 80%;
+//   margin-bottom: 10px;
+//   padding: 8px 12px;
+//   border-radius: 10px;
+// }
+
+// .user {
+//   background-color: #d3f4ff;
+//   align-self: flex-end;
+// }
+
+// .ai {
+//   background-color: #f5f5f5;
+//   align-self: flex-start;
+// }
+
+// /* Chat Input */
+// .chat-input {
+//   padding: 10px;
+//   background-color: #fff;
+//   border-top: 1px solid #ccc;
+//   display: flex;
+// }
+
+// .form-input {
+//   flex: 1;
+//   margin-right: 10px;
+// }
+
+// /* Button Styles */
+// button {
+//   align-self: flex-end;
+// }
+
+// /* Optional: Scrollbar Styles */
+// /* Customize scrollbar appearance for chat history */
+// .chat-history::-webkit-scrollbar {
+//   width: 8px;
+// }
+
+// .chat-history::-webkit-scrollbar-thumb {
+//   background-color: rgba(0, 0, 0, 0.2);
+//   border-radius: 4px;
+// }
+
+// .chat-history::-webkit-scrollbar-track {
+//   background-color: transparent;
+// }
+
+/* Chat Container */
+
+
+
+/* Chat Container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set minimum height to fill the viewport */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in height calculation */
+  }
+  
+  /* Chat History */
+  .chat-history {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    margin-bottom: 60px; /* Reserve space for the chat input area */
+  }
+  
+  /* Message Styles */
+  .message {
+    display: inline-block;
+    max-width: 80%;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+  }
+  
+  .user {
+    background-color: #d3f4ff;
+    max-width: 80%;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+  }
+  
+  .ai {
+    background-color: #f5f5f5;
+    align-self: flex-start;
+    margin: 5px;
+  }
+
+
+  
+  /* Chat Input */
+  .chat-input {
+    position: fixed; /* Fix the chat input area at the bottom */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-input {
+    display: flex; /* Use flexbox for form input elements */
+    flex: 1;
+  }
+  
+  .input-field {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .send-button {
+    margin-left: 10px;
+  }
+  
+  /* Optional: Scrollbar Styles */
+  /* Customize scrollbar appearance for chat history */
+  .chat-history::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .chat-history::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  .chat-history::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
