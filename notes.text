@@ -1,0 +1,6 @@
+siginup => login => get token (the token sended in the header from the backend) 
+=> storege token in localstorage
+=>(when he logouts we remove the token from localstorage )
+What i understand until now:
+when a user request an api (exp: create, update, delete.. post) 
+1. we need to verify his token (look filter package in the backend) so wi gonna send the token with the request
