@@ -1,25 +1,17 @@
 .container {
   min-height: 91vh;
   padding: 30px;
-  @media (max-width: 600px) {
-    padding: 20px;
-  }
+  background-color: white; // Add this line
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Adjust this line
+  // Rest of the styles...
 }
 
 .child {
-  // background-color: $custom-theme.background;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  @media (max-width: 600px) {
-    padding: 10px;
-  }
-}
-.search-bar-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Adjust this line
+  // Rest of the styles...
 }
 
 .search-bar {
@@ -27,71 +19,34 @@
   height: 50px;
   font-size: 18px;
   padding: 10px;
-  border-radius: 25px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
-  .search-bar {
-    width: 75%;
-    height: 40px;
-    font-size: 16px;
-  }
+  border-radius: 4px; // Adjust this line
+  border: none; // Adjust this line
+  box-shadow: none; // Adjust this line
+  // Rest of the styles...
 }
 
 .question-title {
   cursor: pointer;
-  // color: $custom-theme.primary;
   margin-bottom: 10px;
-  font-size: 20px;
-}
-.question-content {
-  margin-bottom: 10px;
-  font-size: 16px;
-  @media (max-width: 600px) {
-    font-size: 14px;
-  }
-}
-.tags-container {
-  margin-top: 10px;
-  .mat-chip-list {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-  .mat-paginator {
-    @media (max-width: 600px) {
-      font-size: 12px;
-    }
-  }
+  font-size: 24px; // Adjust this line
+  font-weight: 600; // Add this line
 }
 
-.empty-message {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  margin-top: 40px;
-  text-align: center;
-  // color: $custom-theme.primary;
-  mat-icon {
-    font-size: 64px;
-    margin-bottom: 10px;
-  }
-  P {
-    font-size: 18px;
-  }
+.question-content {
+  margin-bottom: 10px;
+  font-size: 14px; // Adjust this line
+  color: #666; // Add this line
+  // Rest of the styles...
 }
-.child {
-  margin-bottom: 20px;
+
+.tags-container {
+  margin-top: 10px;
+  display: inline; // Add this line
+  // Rest of the styles...
 }
-.radio {
+
+.pagination {
   display: flex;
-  justify-content: flex-start;
-  margin-top: 20px;
+  justify-content: center; // Adjust this line
+  // Rest of the styles...
 }
