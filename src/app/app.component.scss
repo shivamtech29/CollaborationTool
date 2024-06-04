@@ -1,42 +1,78 @@
+$primary-color: #ff5500ec;
+$secondary-color: #f8f9fa;
+$font-size: 16px;
+$font-weight: 500;
+$spacer: 16px;
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: $font-size;
+}
+
 .navbar {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: $spacer;
+  background-color: $primary-color;
+  color: white;
+
+  &-brand {
+    font-size: 1.5em;
+    font-weight: $font-weight;
+    margin-right: $spacer;
+  }
 }
 
-.navbar-brand {
-  font-size: 20px;
-  font-weight: 500;
-  margin-right: 16px;
-}
 .spacer {
   flex: 1;
 }
+
 button {
   color: white;
   text-transform: uppercase;
-  margin-left: 8px;
-}
+  margin-left: $spacer / 2;
+  background-color: darken($primary-color, 10%);
 
-button.active {
-  font-weight: 600;
+  &.active {
+    font-weight: 600;
+  }
+
+  &:hover, &:focus {
+    background-color: darken($primary-color, 20%);
+  }
 }
 
 .custom-toolbar {
-  background-color: #ff3700; /* Replace with your desired color code or name */
+  background-color: $primary-color;
 }
 
 footer {
-  position: fixed;
+  position: sticky;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #f8f9fa;
+  background-color: $secondary-color;
   color: black;
   text-align: center;
 }
 
 .logo {
-  width: 200px; /* Adjust as needed */
+  width: 20%;
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .navbar-brand {
+    margin-bottom: $spacer;
+  }
+
+  button {
+    margin-left: 0;
+    margin-top: $spacer / 2;
+  }
 }

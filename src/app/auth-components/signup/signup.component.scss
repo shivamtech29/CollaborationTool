@@ -3,27 +3,40 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #f5f5f5; // Add this line
 }
 
 .signup-card {
-  max-width: 400px;
+  max-width: 600px; // Adjust this line
   width: 90%;
   padding: 20px;
   text-align: center;
+  background-color: #ffffff; // Add this line
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Add this line
 }
 
 .signup-caption {
-  font-size: 24px;
+  font-size: 26px; // Adjust this line
   margin-bottom: 10px;
+  font-weight: 700; // Add this line
 }
+
 .form-input {
-  margin-bottom: 7px;
+  margin-bottom: 13px;
+  border: 1px solid #ccc; // Add this line
+  box-shadow: none; // Add this line
 }
+
 .signup-button {
   width: 100%;
-  @media (max-width: 600px) {
-    .signup-card {
-      max-width: 300px;
-    }
+  border: none; // Add this line
+  box-shadow: none; // Add this line
+  background-color: #f48024; // Add this line
+  color: #ffffff; // Add this line
+}
+
+@media (max-width: 600px) {
+  .signup-card {
+    max-width: 300px;
   }
 }

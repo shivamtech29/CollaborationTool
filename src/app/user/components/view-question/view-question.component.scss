@@ -1,20 +1,25 @@
-.question-card {
-  border: 1px solid #ccc;
-  padding: 20px;
+.question-card, .answer-card {
+  border: 1px solid #e2e2e2; // Adjust this line
+  padding: 30px; // Adjust this line
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   width: 60%;
   margin: 0 auto;
+  background-color: #ffffff; // Add this line
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Add this line
 }
+
 h2 {
-  font-size: 24px;
+  font-size: 26px; // Adjust this line
   margin-bottom: 10px;
+  font-weight: 700; // Add this line
 }
+
 .vote-section {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px; // Adjust this line
 }
 
 .arrow-icon {
@@ -27,15 +32,17 @@ h2 {
   font-size: 24px;
   margin-right: 10px;
 }
+
 .question-body {
   margin-bottom: 10px;
 }
+
 .tag-list {
   margin-top: 10px;
 }
 
 @media screen and (max-width: 600px) {
-  .question-card {
+  .question-card, .answer-card {
     padding: 10px;
   }
   h2 {
@@ -50,30 +57,18 @@ h2 {
   }
 }
 
-///////////// Post Answr scss ///////////////
-
 .answer-section {
-  border: 1px solid #ccc;
-  padding: 20px;
+  border: 1px solid #e2e2e2; // Adjust this line
+  padding: 30px; // Adjust this line
   margin-bottom: 20px;
   width: 60%;
   margin: 0 auto;
+  background-color: #ffffff; // Add this line
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Add this line
 }
-h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+
 .form-field {
   margin-bottom: 20px;
-}
-@media screen and (max-width: 600px) {
-  .answer-section {
-    padding: 10px;
-  }
-  h2 {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
 }
 
 .image-preview {
@@ -82,37 +77,13 @@ h2 {
   gap: 10px;
   margin-bottom: 20px;
 }
+
 img {
   max-width: 40%;
   height: 40%;
 }
 
-.answer-card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 60%;
-  margin: 0 auto;
-}
-@media screen and (max-width: 600px) {
-  .answer-card {
-    padding: 10px;
-  }
-}
 .answred {
   color: rgb(22, 22, 22);
   font-weight: 400;
-}
-
-.vote-section {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.arrow-icon {
-  cursor: pointer;
-  margin-right: 10px;
-  font-size: 24px;
 }

@@ -3,32 +3,45 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #fafafa; // Adjust this line
 }
+
 .child {
-  max-width: 600px;
+  max-width: 800px; // Adjust this line
   width: 90%;
   padding: 20px;
-  text-align: center;
-  background-color: #f0f2f5;
+  text-align: left; // Adjust this line
+  background-color: #ffffff; // Adjust this line
   border-radius: 4px;
-  box-shadow: 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Adjust this line
 }
+
 .question-caption {
   font-size: 24px;
   margin-bottom: 20px;
+  font-weight: 700; // Adjust this line
 }
 
 .form-input {
   margin-bottom: 13px;
+  border: 1px solid #ccc; // Adjust this line
+  box-shadow: none; // Adjust this line
 }
+
 .login-form-button {
   width: 100%;
+  border: none; // Adjust this line
+  box-shadow: none; // Adjust this line
+  background-color: #f48024; // Add this line
+  color: #ffffff; // Add this line
 }
+
 @media (max-width: 600px) {
   .child {
     width: 100%;
   }
 }
+
 .example-chip-list {
   width: 100%;
 }
