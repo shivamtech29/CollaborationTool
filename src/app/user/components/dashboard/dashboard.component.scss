@@ -1,17 +1,68 @@
-.container {
+.content-wrapper {
+  display: flex;
   min-height: 91vh;
   padding: 30px;
-  background-color: white; // Add this line
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Adjust this line
-  // Rest of the styles...
 }
 
-.child {
-  padding: 20px;
+.container {
+  flex: 3 1 0;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin-right: 30px;
+}
+
+.sidebars {
+  flex: 2 1 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar, .sidebarbelow {
+  flex: 1 1 0;
+  padding: 30px;
+  background-color: #f4f4f4;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Adjust this line
-  // Rest of the styles...
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar, .sidebarbelow::-webkit-scrollbar {
+  display: none;
+}
+
+.tech-news, .blogs {
+  margin-bottom: 20px;
+}
+
+.news-tile, .blog-tile {
+  margin-bottom: 20px;
+}
+
+.news-card, .blog-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+.news-card h3, .blog-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.news-card p, .blog-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.search-bar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .search-bar {
@@ -19,34 +70,78 @@
   height: 50px;
   font-size: 18px;
   padding: 10px;
-  border-radius: 4px; // Adjust this line
-  border: none; // Adjust this line
-  box-shadow: none; // Adjust this line
-  // Rest of the styles...
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.child {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .question-title {
   cursor: pointer;
   margin-bottom: 10px;
-  font-size: 24px; // Adjust this line
-  font-weight: 600; // Add this line
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .question-content {
   margin-bottom: 10px;
-  font-size: 14px; // Adjust this line
-  color: #666; // Add this line
-  // Rest of the styles...
+  font-size: 14px;
+  color: #666;
 }
 
 .tags-container {
   margin-top: 10px;
-  display: inline; // Add this line
-  // Rest of the styles...
+  display: inline;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.post-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-details span {
+  display: block;
+  margin-bottom: 2px;
 }
 
 .pagination {
   display: flex;
-  justify-content: center; // Adjust this line
-  // Rest of the styles...
+  justify-content: center;
+}
+
+.empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.empty-message mat-icon {
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+.empty-message p {
+  font-size: 18px;
 }

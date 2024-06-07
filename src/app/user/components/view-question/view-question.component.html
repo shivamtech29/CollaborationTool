@@ -1,35 +1,39 @@
 <!-- //////////////////////////// View question html /////////////////////////////// -->
 
-
+<!-- View question HTML -->
 <div class="question-card" style="margin-top: 30px;" *ngIf="question">
     <h2 class="question-title">
         {{question.title}}
     </h2>
-    <p>
-        Asked On: <b>{{question.createdDate | date: ' dd , MM , YYYY '}}</b>
-        By: <b>{{question.username}}</b>
-        <!-- - Viewed: <b>{{question.views}}</b> times -->
-    </p>
-    <div class="vote-section">
-        <div class="arrow-icon" (click)="addVote('UPVOTE', question.voted)"
-            [ngStyle]="{'color' : question.voted == '1'? 'rgb(11,211,81)' : 'default'}">
-            <i class="material-icons">keyboard_arrow_up</i>
+    <hr> <!-- Horizontal rule below the title -->
+    <div class="question-content">
+        <div class="vote-section">
+            <div class="arrow-icon" (click)="addVote('UPVOTE', question.voted)"
+                [ngStyle]="{'color' : question.voted == '1'? 'rgb(11,211,81)' : 'default'}">
+                <i class="material-icons">keyboard_arrow_up</i>
+            </div>
+            <div class="vote-count">{{question.voteCount}}</div>
+            <div class="arrow-icon" (click)="addVote('DOWNVOTE', question.voted)"
+                [ngStyle]="{'color' : question.voted == '-1'? 'rgb(11,211,81)' : 'default'}">
+                <i class="material-icons">keyboard_arrow_down</i>
+            </div>
         </div>
-        <div class="vote-count">{{question.voteCount}}</div>
-        <div class="arrow-icon" (click)="addVote ('DOWNVOTE', question.voted)"
-            [ngStyle]="{'color' : question.voted == '-1'? 'rgb(11,211,81)' : 'default'}">
-            <i class="material-icons">keyboard_arrow_down</i>
+        <div class="question-body">
+            <p>{{question.body}}</p>
+            <div class="tags-list">
+                <mat-chip-listbox>
+                    <mat-chip color="primary" *ngFor="let tag of question.tags">{{tag}} </mat-chip>
+                </mat-chip-listbox>
+            </div>
         </div>
     </div>
-    <div class="question-body">
-        <p>Body: {{question.body}}</p>
-        <div class="tags-list">
-            <mat-chip-listbox>
-                <mat-chip color="primary" *ngFor="let tag of question.tags">{{tag}} </mat-chip>
-            </mat-chip-listbox>
+    <hr> <!-- Horizontal rule above the post info -->
+    <div class="post-info">
+        <img [src]="profilePictureUrl" class="profile-pic" alt="User Profile Picture">
+        <div class="post-details">
+            <span>Posted By: <b>{{question.username}}</b></span>
+            <span>Posted On: <b>{{question.createdDate | date: ' dd , MM , YYYY '}}</b></span>
         </div>
-        <hr>
-
     </div>
 </div>
 
@@ -61,8 +65,8 @@
         <form [formGroup]="validateForm" (ngSubmit)="addAnswer()">
             <div class="form-field">
                 <mat-form-field appearance="fill">
-                    <mat-label>Subject</mat-label>
-                    <textarea matInput rows="2" placeholder="Solution ...." formControlName="body"></textarea>
+                    <!-- <mat-label>Subject</mat-label> -->
+                    <textarea matInput rows="2" placeholder="Your answer" formControlName="body"></textarea>
                 </mat-form-field>
             </div>
             <div class="form-field">

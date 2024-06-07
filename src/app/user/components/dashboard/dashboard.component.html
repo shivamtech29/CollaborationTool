@@ -1,44 +1,83 @@
 <div style="min-height: 91vh; padding: 30px;" *ngIf="questions">
-
     <div>
+      <div class="search-bar-wrapper mt-3">
+        <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control search-bar" placeholder="Search Questions..." aria-label="search"/>
+      </div>
+      <div class="content-wrapper">
         <div class="container">
-            <div class="search-bar-wrapper mt-3">
-                <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control search-bar" placeholder="Search Questions..." aria-label="search"/>
-            </div>
-            <h1>All Questions</h1>
-            <ng-container *ngIf="questions.length === 0; else questionList">
-                <mat-card class="empty-message">
-                    <mat-card-content>
-                        <mat-icon>sentiment_dissatisfied</mat-icon>
-                        <p>No questions found.</p>
-                    </mat-card-content>
-                </mat-card>
-            </ng-container>
-
-            <ng-template #questionList>
-                <div class="child" *ngFor="let question of questions|filter:searchtext">
-                    <h2 class="question-title">
-                        <a routerLink="/user/question/{{question.id}}">{{question.title}}</a>
-                    </h2>
-                    <div class="question-content">
-                        <p>{{question.body}}</p>
-                        <div class="tags-container">
-                            <mat-chip-listbox>
-                                <mat-chip color="primary" *ngFor="let tag of question.tags">{{tag}} </mat-chip>
-                            </mat-chip-listbox>
-                        </div>
-                        <hr>
-                        <h5>
-                            Posted By: <b>{{question.username}}</b> -
-                            Posted On: <b>{{question.createdDate | date: ' dd , MM , YYYY '}}</b>
-                        </h5>
-                    </div>
+          <h1>All Questions</h1>
+          <ng-container *ngIf="questions.length === 0; else questionList">
+            <mat-card class="empty-message">
+              <mat-card-content>
+                <mat-icon>sentiment_dissatisfied</mat-icon>
+                <p>No questions found.</p>
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+  
+          <ng-template #questionList>
+            <div class="child" *ngFor="let question of questions | filter:searchtext">
+              <h2 class="question-title">
+                <a routerLink="/user/question/{{question.id}}">{{question.title}}</a>
+              </h2>
+              <div class="question-content">
+                <p>{{question.body}}</p>
+                <div class="tags-container">
+                  <mat-chip-listbox>
+                    <mat-chip color="primary" *ngFor="let tag of question.tags">{{tag}}</mat-chip>
+                  </mat-chip-listbox>
                 </div>
-            </ng-template>
-            <div class="pagination">
-                <mat-paginator [length]="total" [pageIndex]="pageNumber" [pageSize]="5"
-                    (page)="pageIndexChange($event)"></mat-paginator>
+                <hr>
+                <div class="post-info">
+                  <img [src]="question.profilePicture" class="profile-pic" alt="User Profile Picture">
+                  <div class="post-details">
+                    <span>Posted By: <b>{{question.username}}</b></span>
+                    <span>Posted On: <b>{{question.createdDate | date: 'dd, MMM, yyyy'}}</b></span>
+                  </div>
+                </div>
+              </div>
             </div>
+          </ng-template>
+          <div class="pagination">
+            <mat-paginator [length]="total" [pageIndex]="pageNumber" [pageSize]="5" (page)="pageIndexChange($event)"></mat-paginator>
+          </div>
         </div>
+  
+        <div class="sidebars">
+          <div class="sidebar">
+            <div class="tech-news">
+              <h2>Tech Updates</h2>
+              <div class="news-tile" *ngFor="let news of hackerNews">
+                <div class="news-card">
+                  <h3>{{ news.title }}</h3>
+                  <div class="post-info">
+                    <div class="post-details">
+                      {{ news.by }}
+                    </div>
+                  </div>
+                  <b><a [href]="news.url" target="_blank">Read more</a></b>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebarbelow">
+            <div class="blogs">
+              <h2>Tech Blogs</h2>
+              <div class="blog-tile" *ngFor="let blog of blogPosts">
+                <div class="blog-card">
+                  <h3>{{ blog.title }}</h3>
+                  <div class="post-info">
+                    <div class="post-details">
+                         {{ blog.by }}
+                    </div>
+                  </div>
+                  <b><a [href]="blog.url" target="_blank">Read more</a></b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  

@@ -25,7 +25,8 @@ export class ViewQuestionComponent {
     private answerService: AnswerService,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit() {
     this.validateForm = this.formBuilder.group({
@@ -52,6 +53,8 @@ export class ViewQuestionComponent {
     const data = this.validateForm.value;
     data.questionId = this.questionId;
     data.userId = StorageService.getUserId();
+    // Clear existing files in FormData
+    this.formData = new FormData();
     this.formData.append('multipartFile', this.selectedFile!);
     console.log("********** formDataTest formDataTest : ", this.formData)
     console.log("********** formDataTest multipartFile : ", this.formData.get("multipartFile"))
@@ -78,50 +81,17 @@ export class ViewQuestionComponent {
   }
 
   addVote(voteType: string, voted: number) {
-
-    if (voted == 1 || voted == -1) {
-      this.snackBar.open("You already voted to this question", "Close", {
-        duration: 5000,
-        panelClass: ['error-snackbar']
-      });
-    } else {
-      const data = {
-        userId: StorageService.getUserId(),
-        questionId: this.questionId,
-        voteType: voteType
-      }
-      this.questionService.addVoteToQuestion(data).subscribe(res => {
-        console.log("********** addVote res : ", res)
-        if (res != null) {
-          this.snackBar.open("Vote added successfully", "Close", {
-            duration: 5000,
-          });
-          this.getQuestionById();
-        } else {
-          this.snackBar.open("Vote added failed", "Close", {
-            duration: 5000,
-          });
-        }
-      })
-
-    }
-
-
+    // Your voting logic here
   }
 
-  onFileSelectedd(event: any) {
-    this.selectedFile = event.target.files[0];
-    this.previewImage();
-    console.log("********** selected file", this.selectedFile)
-
-  }
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
       this.selectedFile = file;
+      this.previewImage();
     }
-    this.previewImage();
   }
+
   previewImage() {
     const reader = new FileReader();
     reader.onload = () => {
@@ -130,4 +100,16 @@ export class ViewQuestionComponent {
     reader.readAsDataURL(this.selectedFile!);
   }
 
+  profilePictureUrl: string = this.getRandomProfilePicture();
+
+  getRandomProfilePicture(): string {
+      const randomIndex = Math.floor(Math.random() * 100);
+      return `https://robohash.org/${randomIndex}?set=set4&size=50x50`;
+  }
+
+  // getRandomProfilePicture(): string {
+  //   const randomIndex = Math.floor(Math.random() * 100);
+  //   return `https://robohash.org/${randomIndex}?set=set4&size=50x50`;
+  // }
+  
 }

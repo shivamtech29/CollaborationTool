@@ -1,7 +1,7 @@
 .container {
   min-height: 91vh;
   padding: 30px;
-  background-color: white; // Add this line
+  background-color: white;
   @media (max-width: 600px) {
     padding: 20px;
   }
@@ -11,7 +11,7 @@
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Adjust this line
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   @media (max-width: 600px) {
     padding: 10px;
   }
@@ -20,14 +20,14 @@
 .question-title {
   cursor: pointer;
   margin-bottom: 10px;
-  font-size: 24px; // Adjust this line
-  font-weight: 600; // Add this line
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .question-content {
   margin-bottom: 10px;
-  font-size: 14px; // Adjust this line
-  color: #666; // Add this line
+  font-size: 14px;
+  color: #666;
   @media (max-width: 600px) {
     font-size: 14px;
   }
@@ -35,22 +35,36 @@
 
 .tags-container {
   margin-top: 10px;
-  display: inline; // Add this line
-  .mat-chip-list {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
+  display: inline;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Add some space above */
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.post-details {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.post-details span {
+  display: block; /* Ensure spans take full width */
+  margin-bottom: 2px; /* Add space between spans */
 }
 
 .pagination {
   display: flex;
-  justify-content: center; // Adjust this line
+  justify-content: center;
   margin-top: 20px;
-  .mat-paginator {
-    @media (max-width: 600px) {
-      font-size: 12px;
-    }
-  }
 }
 
 .empty-message {
@@ -60,17 +74,13 @@
   height: 200px;
   margin-top: 40px;
   text-align: center;
-  mat-icon {
-    font-size: 64px;
-    margin-bottom: 10px;
-  }
-  P {
-    font-size: 18px;
-  }
 }
 
-.radio {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 20px;
+.empty-message mat-icon {
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+.empty-message p {
+  font-size: 18px;
 }

@@ -1,47 +1,71 @@
-.parent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fafafa; // Adjust this line
+/* Custom Styles for Post Question Form */
+
+
+/* Spinner Styles */
+mat-spinner {
+  display: block;
+  margin: 2rem auto; /* Center the spinner horizontally */
 }
 
-.child {
-  max-width: 800px; // Adjust this line
-  width: 90%;
-  padding: 20px;
-  text-align: left; // Adjust this line
-  background-color: #ffffff; // Adjust this line
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Adjust this line
-}
-
-.question-caption {
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-weight: 700; // Adjust this line
-}
-
-.form-input {
-  margin-bottom: 13px;
-  border: 1px solid #ccc; // Adjust this line
-  box-shadow: none; // Adjust this line
-}
-
-.login-form-button {
-  width: 100%;
-  border: none; // Adjust this line
-  box-shadow: none; // Adjust this line
-  background-color: #f48024; // Add this line
-  color: #ffffff; // Add this line
-}
-
-@media (max-width: 600px) {
-  .child {
-    width: 100%;
+/* Custom Styles to Remove Asterisks from MatLabel */
+.mat-form-field-label {
+  ::after {
+    content: none !important;
   }
 }
 
-.example-chip-list {
+/* Parent Container Styles */
+.parent {
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+/* Child Container Styles */
+.child {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+/* Question Caption Styles */
+.question-caption {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Form Input Styles */
+.form-input {
+  margin-bottom: 1rem;
+}
+
+/* Full Width Styles */
+.full-width {
+  width: 100%;
+}
+
+/* Post Question Button Styles */
+.post-question-button {
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-question-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.post-question-button:hover:not(:disabled) {
+  background-color: #0056b3;
 }
