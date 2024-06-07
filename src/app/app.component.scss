@@ -1,4 +1,4 @@
-$primary-color: #ff5500ec;
+$primary-color: #00aeffec;
 $secondary-color: #f8f9fa;
 $font-size: 16px;
 $font-weight: 500;
@@ -31,7 +31,7 @@ button {
   color: white;
   text-transform: uppercase;
   margin-left: $spacer / 2;
-  background-color: darken($primary-color, 10%);
+  // background-color: darken($primary-color, 10%);
 
   &.active {
     font-weight: 600;
